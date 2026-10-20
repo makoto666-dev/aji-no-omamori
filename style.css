@@ -1,1 +1,92 @@
-:root{--paper:#f8f4eb;--white:#fffdf8;--red:#a95643;--green:#526b57;--ink:#4a382d;--muted:#85796d;--line:#e9ddc9}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Yu Mincho","Hiragino Mincho ProN",serif;line-height:1.85}a{color:inherit;text-decoration:none}.site-header{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 max(24px,calc((100vw - 920px)/2));border-bottom:1px solid var(--line);background:var(--white)}.brand{font-size:1.4rem;font-weight:bold;letter-spacing:.12em}.brand span{color:var(--red)}.tagline{font-size:.75rem;color:var(--muted)}.container{max-width:920px;margin:auto;padding:46px 22px 90px}.eyebrow{font-size:.78rem;letter-spacing:.22em;color:var(--red);font-weight:bold}.page-title{font-size:clamp(1.7rem,4vw,2.5rem);letter-spacing:.12em;margin:8px 0 12px}.intro{color:var(--muted);margin:0 0 36px}.collection{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.recipe-card{background:var(--white);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 6px 20px #4a382d0b;transition:transform .2s}.recipe-card:hover{transform:translateY(-4px)}.card-image,.hero-image{display:flex;align-items:center;justify-content:center;background:#e8dfcf;overflow:hidden}.card-image{height:190px;font-size:4rem}.card-image img,.hero-image img{width:100%;height:100%;object-fit:cover}.card-body{padding:18px}.card-body h2{font-size:1.3rem;margin:2px 0 6px}.card-body p{font-size:.83rem;color:var(--muted);margin:0}.detail-layout{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start}.hero-image{height:390px;border-radius:18px;font-size:6rem}.detail-info{padding:10px 0}.message{background:var(--white);border-left:4px solid var(--red);padding:20px 24px;margin:24px 0;font-size:1rem}.message small{display:block;color:var(--muted);margin-top:10px}.section{margin-top:38px;border-top:1px solid var(--line);padding-top:22px}.section h2{font-size:1.2rem;letter-spacing:.08em}.ingredients{padding-left:22px}.steps{padding-left:26px}.steps li{margin-bottom:12px}.back{display:inline-block;color:var(--green);font-size:.9rem;margin-bottom:22px}.button{display:inline-block;background:var(--green);color:white;border-radius:999px;padding:10px 23px;margin-top:15px;font-size:.9rem}.video{width:100%;border-radius:12px;background:#ddd}.placeholder{background:#eee5d7;padding:25px;border-radius:12px;color:var(--muted);font-size:.9rem}.empty{text-align:center;padding:80px 10px}footer{text-align:center;border-top:1px solid var(--line);padding:35px;color:var(--muted);font-size:.85rem}footer small{display:block;font-size:.7rem;margin-top:4px}@media(max-width:700px){.site-header{height:65px;padding:0 18px}.tagline{display:none}.container{padding:30px 18px 70px}.collection{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card-image{height:150px}.card-body{padding:13px}.card-body h2{font-size:1.08rem}.detail-layout{grid-template-columns:1fr;gap:16px}.hero-image{height:270px}.detail-info{padding:0}}@media(max-width:370px){.collection{grid-template-columns:1fr}.card-image{height:200px}}
+:root {
+  --paper: #f8f4eb;
+  --white: #fffdf8;
+  --red: #a95643;
+  --green: #526b57;
+  --ink: #4a382d;
+  --muted: #706357;
+  --line: #e9ddc9;
+}
+* { box-sizing: border-box; }
+html { scroll-padding-top: 24px; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; font-size: 16px; line-height: 1.9; overflow-wrap: anywhere; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible, video:focus-visible, audio:focus-visible { outline: 3px solid var(--red); outline-offset: 5px; }
+.skip-link { position: absolute; left: 16px; top: -100px; z-index: 2; background: var(--white); padding: 12px 20px; }
+.skip-link:focus { top: 10px; }
+.site-header { min-height: 80px; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px max(24px, calc((100vw - 960px) / 2)); border-bottom: 1px solid var(--line); }
+.brand, h1, h2, h3, .lead { font-family: "Yu Mincho", "Hiragino Mincho ProN", serif; }
+.brand { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; font-size: 1.3rem; font-weight: bold; letter-spacing: .12em; }
+.brand span { color: var(--red); }
+.tagline { color: var(--muted); font-size: .8rem; }
+.container { max-width: 960px; margin: auto; padding: 40px 24px 72px; }
+.eyebrow { color: var(--red); font-size: .8rem; letter-spacing: .16em; margin: 0 0 12px; font-weight: bold; }
+.page-title { font-size: clamp(1.8rem, 5vw, 2.8rem); line-height: 1.5; letter-spacing: .12em; margin: 0 0 12px; }
+.collection-intro { text-align: center; padding: 30px 0 50px; }
+.lead { font-size: clamp(1.4rem, 4vw, 2rem); line-height: 1.8; margin: 24px 0 16px; }
+.intro, .section-description { color: var(--muted); margin: 0 0 24px; }
+.section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+h2 { font-size: 1.3rem; margin: 0 0 12px; letter-spacing: .06em; }
+.section-heading > span { font-size: .85rem; color: var(--muted); white-space: nowrap; }
+.section-description { font-size: .95rem; }
+.collection { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.recipe-card { background: var(--white); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; transition: transform .2s, box-shadow .2s; }
+@media (hover: hover) { .recipe-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px #4a382d12; } }
+.card-image, .hero-image { display: flex; flex-direction: column; align-items: center; justify-content: center; background: #eee6d7; overflow: hidden; aspect-ratio: 4 / 3; }
+.card-image img, .hero-image img { width: 100%; height: 100%; object-fit: cover; }
+.food-symbol { font-size: 4rem; line-height: 1.4; }
+.image-note { color: var(--muted); font-size: .75rem; }
+.card-body { padding: 20px; }
+.card-number { color: var(--red); font-size: .75rem; letter-spacing: .12em; }
+.card-body h3 { font-size: 1.35rem; margin: 6px 0; }
+.card-body p { color: var(--muted); font-size: .9rem; margin: 0 0 20px; }
+.card-link { display: flex; justify-content: space-between; color: var(--green); font-size: .9rem; }
+.back { display: inline-flex; align-items: center; min-height: 44px; color: var(--green); margin-bottom: 24px; }
+.recipe-heading { margin-bottom: 28px; }
+.detail-layout { display: grid; grid-template-columns: 1.1fr 1fr; gap: 28px; align-items: stretch; }
+.hero-image { border-radius: 12px; }
+.hero-image .food-symbol { font-size: 6rem; }
+.message { background: var(--white); padding: 28px; border-top: 3px solid var(--red); border-radius: 4px 4px 12px 12px; display: flex; flex-direction: column; justify-content: center; }
+.message h2 { font-size: 1rem; color: var(--red); }
+blockquote { margin: 0; }
+blockquote p { margin: 10px 0 20px; font-size: 1.1rem; }
+blockquote footer { color: var(--muted); text-align: right; font-size: .9rem; }
+.recipe-nav { display: flex; flex-wrap: wrap; gap: 8px; padding: 24px 0 0; }
+.recipe-nav a { min-height: 44px; padding: 8px 20px; border: 1px solid var(--line); border-radius: 24px; background: var(--white); color: var(--green); }
+.recipe-nav a:hover { border-color: var(--green); }
+.recipe-content { display: grid; grid-template-columns: 1fr 1.3fr; gap: 40px; }
+.section { min-width: 0; margin-top: 32px; border-top: 1px solid var(--line); padding-top: 24px; }
+.ingredients { list-style: none; padding: 0; margin: 12px 0 0; }
+.ingredients li { border-bottom: 1px dashed var(--line); padding: 10px 0; }
+.steps { list-style: none; counter-reset: step; padding: 0; margin: 16px 0 0; }
+.steps li { counter-increment: step; position: relative; padding: 0 0 24px 46px; min-height: 52px; }
+.steps li::before { content: counter(step, decimal-leading-zero); position: absolute; left: 0; top: 0; width: 30px; height: 30px; border-radius: 50%; background: var(--green); color: white; font-size: .8rem; text-align: center; line-height: 30px; }
+.video { display: block; width: 100%; max-height: 560px; border-radius: 12px; background: #2e2924; }
+audio { display: block; width: 100%; }
+.collection-return { text-align: center; border-top: 1px solid var(--line); margin-top: 40px; padding-top: 32px; }
+.collection-return p { color: var(--muted); font-size: .95rem; }
+.button { display: inline-flex; justify-content: center; align-items: center; gap: 24px; min-height: 48px; background: var(--green); color: white; border-radius: 28px; padding: 12px 24px; }
+.button:hover { background: #405744; }
+.empty { text-align: center; padding: 60px 0; }
+.empty > p:not(.eyebrow) { color: var(--muted); margin: 24px 0; }
+.site-footer { text-align: center; border-top: 1px solid var(--line); padding: 32px 24px; color: var(--muted); font-size: .85rem; }
+.site-footer small { display: block; margin-top: 8px; font-size: .75rem; }
+@media (max-width: 700px) {
+  .site-header { min-height: 68px; padding: 10px 20px; }
+  .tagline { display: none; }
+  .container { padding: 28px 20px 56px; }
+  .collection-intro { padding: 20px 0 36px; }
+  .collection { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .card-body { padding: 16px 12px; }
+  .card-body h3 { font-size: 1.2rem; }
+  .card-body p { font-size: .85rem; }
+  .food-symbol { font-size: 3rem; }
+  .detail-layout, .recipe-content { grid-template-columns: 1fr; gap: 20px; }
+  .recipe-content { gap: 0; }
+  .message { padding: 24px; }
+  .recipe-nav a { padding-inline: 16px; }
+  .section-heading { gap: 8px; }
+  .section-heading h2 { font-size: 1.15rem; }
+}
+@media (max-width: 380px) { .collection { grid-template-columns: 1fr; } .card-body { padding: 20px; } }
+@media (prefers-reduced-motion: reduce) { .recipe-card { transition: none; } }

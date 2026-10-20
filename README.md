@@ -7,9 +7,29 @@
 
 ## 編集
 - `script.js` の `recipes` に料理名・材料・手順・メッセージを設定
-- `assets/` フォルダを作り写真・動画・音声を配置
-- 例: `image:'assets/nikujaga.jpg'`, `video:'assets/nikujaga.mp4'`, `audio:'assets/message.mp3'`
+- 写真は `assets/images/`、動画は `assets/videos/`、音声は `assets/audio/` に配置
+- 例: `image:'assets/images/nikujaga.jpg'`, `video:'assets/videos/nikujaga.mp4'`, `audio:'assets/audio/nikujaga.mp3'`
 - 動画・音声の公開に家族の許可を得てください。
+
+## ファイル構成
+
+```text
+aji-no-omamori/
+├── index.html
+├── style.css
+├── script.js
+├── assets/
+│   ├── images/
+│   ├── videos/
+│   └── audio/
+├── docs/
+│   └── specification.md
+└── README.md
+```
+
+仕様書は [docs/specification.md](docs/specification.md) にあります。
+素材用フォルダの `.gitkeep` は、素材が未配置でもGitでフォルダを保持するためのファイルです。
+写真・動画・音声の実ファイルはまだ配置されていません。
 
 ## GitHub Pages
 1. GitHub に `aji-no-omamori` という公開リポジトリを作る
