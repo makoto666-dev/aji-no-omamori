@@ -1,8 +1,8 @@
 // 料理データ。写真は assets/images/、動画は assets/videos/、音声は assets/audio/ に配置してください。
 const recipes = [
-  {id:'nikujaga',name:'肉じゃが',subtitle:'お母さんの、いつもの味',emoji:'🥔',image:'',from:'お母さんより',message:'疲れた日には、これを作って食べてね。いつでも応援しているよ。',ingredients:['じゃがいも 3個','にんじん 1本','玉ねぎ 1個','牛こま切れ肉 200g','しょうゆ 大さじ3','みりん 大さじ2','砂糖 大さじ2','水 250ml'],steps:['野菜を食べやすい大きさに切る。','鍋で牛肉と野菜を軽く炒める。','水と調味料を加え、落としぶたをして煮る。','野菜が柔らかくなったら完成。'],video:'',audio:''},
-  {id:'tamagoyaki',name:'卵焼き',subtitle:'朝ごはんの思い出',emoji:'🍳',image:'',from:'お父さんより',message:'少し甘めに作るのが、うちの卵焼き。',ingredients:['卵 3個','砂糖 小さじ2','しょうゆ 少々','油 適量'],steps:['卵と調味料をよく混ぜる。','卵焼き器に油を薄くひく。','卵液を少しずつ流し、巻きながら焼く。'],video:'',audio:''},
-  {id:'miso-soup',name:'お味噌汁',subtitle:'ほっとする、家の味',emoji:'🍲',image:'',from:'おばあちゃんより',message:'具は季節の野菜で変えてみてね。',ingredients:['だし汁 400ml','味噌 大さじ2','豆腐 1/2丁','わかめ 適量'],steps:['だし汁を温め、具材を煮る。','火を弱めて味噌を溶く。','沸騰させずに温めて完成。'],video:'',audio:''}
+  {id:'nikujaga',name:'肉じゃが',subtitle:'お母さんの、いつもの味',emoji:'🥔',image:'assets/images/nikujaga.png',from:'お母さんより',message:'疲れた日には、これを作って食べてね。いつでも応援しているよ。',ingredients:['じゃがいも 3個','にんじん 1本','玉ねぎ 1個','牛こま切れ肉 200g','しょうゆ 大さじ3','みりん 大さじ2','砂糖 大さじ2','水 250ml'],steps:['野菜を食べやすい大きさに切る。','鍋で豚肉と玉ねぎを炒める。','醤油大さじ2、みりん大さじ2を入れる。','残りの野菜を入れる。','水400mlを加え、ふたをして13分程煮る。','じゃがいもが柔らかくなったら完成。'],video:'assets/videos/%E3%82%82%E3%81%AE%E3%81%A5%E3%81%8F%E3%82%8A%E5%8B%95%E7%94%BB.mp4',audio:''},
+  {id:'tamagoyaki',name:'卵焼き',subtitle:'朝ごはんの思い出',emoji:'🍳',image:'assets/images/dashimaki.png',from:'お父さんより',message:'少し甘めに作るのが、うちの卵焼き。',ingredients:['卵 3個','砂糖 小さじ2','しょうゆ 少々','油 適量'],steps:['卵と調味料をよく混ぜる。','卵焼き器に油を薄くひく。','卵液を少しずつ流し、巻きながら焼く。'],video:'',audio:''},
+  {id:'miso-soup',name:'お味噌汁',subtitle:'ほっとする、家の味',emoji:'🍲',image:'assets/images/misoshiru.png',from:'おばあちゃんより',message:'具は季節の野菜で変えてみてね。',ingredients:['だし汁 400ml','味噌 大さじ2','豆腐 1/2丁','わかめ 適量'],steps:['だし汁を温め、具材を煮る。','火を弱めて味噌を溶く。','沸騰させずに温めて完成。'],video:'',audio:''}
 ];
 const app = document.querySelector('#app');
 const escapeHTML = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
@@ -51,8 +51,8 @@ function renderDetail(recipe) {
         <section id="ingredients" class="section" aria-labelledby="ingredients-title"><div class="section-heading"><h2 id="ingredients-title">材料・分量</h2>${recipe.servings ? `<span>${escapeHTML(recipe.servings)}</span>` : ''}</div><ul class="ingredients">${recipe.ingredients.map(item => `<li>${escapeHTML(item)}</li>`).join('')}</ul></section>
         <section id="steps" class="section" aria-labelledby="steps-title"><h2 id="steps-title">作り方</h2><ol class="steps">${recipe.steps.map(step => `<li>${escapeHTML(step)}</li>`).join('')}</ol></section>
       </div>
-      ${recipe.video ? `<section id="video" class="section" aria-labelledby="video-title"><h2 id="video-title">作り方の動画</h2><p class="section-description">手の動きや火加減を、動画でたどってみましょう。</p><video class="video" src="${escapeHTML(recipe.video)}" controls playsinline preload="metadata" aria-label="${escapeHTML(recipe.name)}の作り方">動画を再生できません。<a href="${escapeHTML(recipe.video)}">動画を開く</a></video></section>` : ''}
-      ${recipe.audio ? `<section id="audio" class="section" aria-labelledby="audio-title"><h2 id="audio-title">声のおたより</h2><p class="section-description">料理に込めた言葉を、声でお届けします。</p><audio controls preload="metadata" src="${escapeHTML(recipe.audio)}" aria-label="${escapeHTML(recipe.name)}に添えた音声メッセージ">音声を再生できません。<a href="${escapeHTML(recipe.audio)}">音声を開く</a></audio></section>` : ''}
+      ${recipe.video ? `<section id="video" class="section" aria-labelledby="video-title"><h2 id="video-title">作り方の動画</h2><video class="video" src="${escapeHTML(recipe.video)}" controls playsinline preload="metadata" aria-label="${escapeHTML(recipe.name)}の作り方">動画を再生できません。<a href="${escapeHTML(recipe.video)}">動画を開く</a></video></section>` : ''}
+      ${recipe.audio ? `<section id="audio" class="section" aria-labelledby="audio-title"><h2 id="audio-title">声のおたより</h2><audio controls preload="metadata" src="${escapeHTML(recipe.audio)}" aria-label="${escapeHTML(recipe.name)}に添えた音声メッセージ">音声を再生できません。<a href="${escapeHTML(recipe.audio)}">音声を開く</a></audio></section>` : ''}
       <div class="collection-return"><p>ほかのひと皿にも、家族の記憶が詰まっています。</p><a class="button" href="./index.html">コレクションを見る <span aria-hidden="true">→</span></a></div>
     </article>`;
 }
